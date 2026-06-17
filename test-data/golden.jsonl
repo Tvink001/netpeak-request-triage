@@ -1,0 +1,12 @@
+{"id": "REQ-001", "category": ["автоматизація", "звіт/аналітика"], "is_actionable": true}
+{"id": "REQ-004", "category": ["питання/консультація"], "priority": ["low"]}
+{"id": "REQ-005", "category": ["звіт/аналітика"], "priority": ["high"], "is_actionable": true}
+{"id": "REQ-007", "category": ["баг/підтримка"], "priority": ["high"], "is_actionable": true}
+{"id": "REQ-008", "category": ["поза скоупом"], "is_actionable": false}
+{"id": "REQ-009", "category": ["автоматизація"], "is_actionable": true}
+{"id": "REQ-010", "category": ["автоматизація", "інтеграція"], "is_actionable": true}
+{"id": "REQ-012", "category": ["поза скоупом"], "priority": ["low"], "is_actionable": false}
+{"id": "REQ-013", "category": ["звіт/аналітика", "автоматизація"], "is_actionable": true}
+{"id": "REQ-014", "category": ["питання/консультація"], "priority": ["low"], "is_actionable": false}
+{"id": "REQ-017", "category": ["інтеграція"], "priority": ["high"], "is_actionable": true}
+{"id": "REQ-018", "category": ["автоматизація", "звіт/аналітика"], "is_actionable": true}

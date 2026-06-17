@@ -9,19 +9,11 @@ import sys
 from pydantic import ValidationError
 
 from triage.config import get_settings
+from triage.console import force_utf8_stdio
 from triage.inbox import read_requests
 from triage.pipeline import run
 from triage.report import write_outputs
 from triage.telegram import send_digest
-
-
-def _force_utf8_stdio() -> None:
-    """Emit UTF-8 regardless of the console code page (Windows consoles default
-    to cp1251/cp1252, which cannot encode Cyrillic and would crash on print)."""
-    for stream in (sys.stdout, sys.stderr):
-        reconfigure = getattr(stream, "reconfigure", None)
-        if callable(reconfigure):
-            reconfigure(encoding="utf-8")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -48,7 +40,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
-    _force_utf8_stdio()
+    force_utf8_stdio()
     args = build_parser().parse_args(argv)
 
     try:
