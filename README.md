@@ -14,17 +14,17 @@ gracefully, and never crashing on a bad model response, is the core of the task.
 
 ```mermaid
 flowchart LR
-    CSV[input_requests.csv] --> R[CSV reader<br/>utf-8-sig, validated]
-    R --> L{for each row}
-    L --> H[Claude Haiku 4.5<br/>structured output]
-    H --> G[guard: stop_reason +<br/>JSON + Pydantic validate]
-    G -->|ok| OK[ExtractedRequest]
-    G -->|any failure| FB[fail-soft fallback]
-    OK --> C[(collected results)]
+    CSV["input_requests.csv"] --> R["CSV reader, validated"]
+    R --> L{"for each row"}
+    L --> H["Claude Haiku 4.5 structured output"]
+    H --> G["guard stop_reason, JSON, Pydantic validate"]
+    G -->|ok| OK["ExtractedRequest"]
+    G -->|any failure| FB["fail-soft fallback"]
+    OK --> C["collected results"]
     FB --> C
-    C --> J[output.json]
-    C --> M[report.md]
-    C --> T[Telegram digest]
+    C --> J["output.json"]
+    C --> M["report.md"]
+    C --> T["Telegram digest"]
 ```
 
 Each row is sent to Claude Haiku 4.5 with the Anthropic **structured-outputs** feature
