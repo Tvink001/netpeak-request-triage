@@ -1,0 +1,10 @@
+services:
+  triage:
+    build: .
+    image: netpeak-request-triage:dev
+    env_file: .env
+    volumes:
+      # surface output.json + report.md on the host
+      - ./output:/app/output
+    # Default runs the bundled sample. Override at the CLI, e.g.:
+    #   docker compose run --rm triage test-data/input_requests.csv --telegram

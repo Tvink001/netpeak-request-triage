@@ -1,0 +1,25 @@
+.git
+.gitignore
+.gitattributes
+.env
+.env.*
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.claude/
+.mcp.json
+output/
+docs/
+examples/
+tests/
+# local planning docs (kept out of the image, as they are out of git)
+CLAUDE.md
+project_specs.md
+prompts.md
+full_pipeline.md
+learnings.md
