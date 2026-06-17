@@ -25,5 +25,5 @@ def test_fallback_is_valid_and_flagged() -> None:
     assert rec.is_actionable is False
     assert rec.error == "boom"
     assert "boom" in rec.short_summary
-    # The fallback record must itself be valid — no fallback-of-the-fallback.
+    # The fallback record must itself be valid - no fallback-of-the-fallback.
     ExtractedRequest.model_validate(rec.model_dump())

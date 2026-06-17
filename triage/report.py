@@ -45,7 +45,7 @@ def render_report(result: RunResult) -> str:
         f"{stats.fallbacks} fail-soft fallback(s).",
         "",
         f"Tokens: {stats.input_tokens:,} in / {stats.output_tokens:,} out across "
-        f"{stats.api_calls} call(s) — estimated **${stats.estimated_cost_usd:.4f}**.",
+        f"{stats.api_calls} call(s) - estimated **${stats.estimated_cost_usd:.4f}**.",
         "",
     ]
 
@@ -109,7 +109,7 @@ def _related_section(clusters: list[tuple[str, list[ExtractedRequest]]]) -> list
     lines = ["## Potential related requests", ""]
     if not clusters:
         return lines + ["_No same-department clusters._", ""]
-    lines.append("_Requests aimed at the same department — scan for overlap/duplication._")
+    lines.append("_Requests aimed at the same department - scan for overlap/duplication._")
     lines.append("")
     for dep, members in clusters:
         ids = ", ".join(m.id for m in members)

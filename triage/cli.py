@@ -51,7 +51,7 @@ def main(argv: list[str] | None = None) -> int:
             settings = get_settings()
         except ValidationError as exc:
             print(
-                f"error: configuration invalid — is ANTHROPIC_API_KEY set in .env?\n{exc}",
+                f"error: configuration invalid - is ANTHROPIC_API_KEY set in .env?\n{exc}",
                 file=sys.stderr,
             )
             return 2

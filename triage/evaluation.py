@@ -106,7 +106,7 @@ def main(argv: list[str] | None = None) -> int:
     output_path = Path(args.output)
     if not output_path.exists():
         print(
-            f"error: {output_path} not found — run `python -m triage <csv>` first.",
+            f"error: {output_path} not found - run `python -m triage <csv>` first.",
             file=sys.stderr,
         )
         return 2

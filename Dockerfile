@@ -9,7 +9,7 @@ ENV PYTHONUNBUFFERED=1 \
 
 WORKDIR /app
 
-# Dependency layer — cached unless pyproject.toml changes. A stub package lets
+# Dependency layer - cached unless pyproject.toml changes. A stub package lets
 # `pip install -e .` resolve metadata without the real source, so editing
 # triage/ later does not reinstall the dependency tree.
 COPY pyproject.toml README.md ./

@@ -121,7 +121,7 @@ The schema was extended deliberately, not for completeness' sake:
 aggregated, and invites the model to ramble (raising truncation risk). `short_summary`
 plus `confidence` already carry enough traceability.
 
-## Robustness: handling bad model output
+## Handling bad model output
 
 Structured outputs guarantee the *shape* of a successful response, but the Anthropic API
 can still return **HTTP 200 with non-conforming output** — a `stop_reason` of `refusal`

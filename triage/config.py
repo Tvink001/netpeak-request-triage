@@ -18,12 +18,12 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    # Anthropic — required.
+    # Anthropic - required.
     anthropic_api_key: SecretStr
     anthropic_model: str = "claude-haiku-4-5"
     anthropic_max_tokens: int = Field(default=1024, ge=1, le=4096)
 
-    # Telegram digest — optional (only used with --telegram).
+    # Telegram digest - optional (only used with --telegram).
     telegram_bot_token: SecretStr | None = None
     telegram_chat_id: int | None = None
 
