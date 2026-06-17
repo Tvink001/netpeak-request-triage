@@ -6,6 +6,7 @@ import argparse
 import logging
 import sys
 
+import truststore
 from pydantic import ValidationError
 
 from triage.config import get_settings
@@ -41,6 +42,9 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: list[str] | None = None) -> int:
     force_utf8_stdio()
+    # Trust the OS certificate store so HTTPS works behind corporate
+    # TLS-inspecting proxies (and behaves normally everywhere else).
+    truststore.inject_into_ssl()
     args = build_parser().parse_args(argv)
 
     try:
