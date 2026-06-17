@@ -1,0 +1,308 @@
+[
+  {
+    "id": "REQ-001",
+    "channel": "Slack",
+    "category": "автоматизація",
+    "target_department": "Marketing",
+    "priority": "medium",
+    "short_summary": "Автоматизувати щотижневий вивантаження звіту з Google Ads у таблицю замість ручного копіювання.",
+    "requested_actions": [
+      "Автоматизувати щотижневий експорт метрик Google Ads",
+      "Налаштувати синхронізацію основних метрик по кампаніях у таблицю"
+    ],
+    "needs_clarification": false,
+    "language": "uk",
+    "confidence": "high",
+    "secondary_category": null,
+    "is_actionable": true,
+    "error": null
+  },
+  {
+    "id": "REQ-002",
+    "channel": "Telegram",
+    "category": "питання/консультація",
+    "target_department": null,
+    "priority": "medium",
+    "short_summary": "Запит на створення бота без деталей.",
+    "requested_actions": [],
+    "needs_clarification": true,
+    "language": "uk",
+    "confidence": "low",
+    "secondary_category": null,
+    "is_actionable": false,
+    "error": null
+  },
+  {
+    "id": "REQ-003",
+    "channel": "Email",
+    "category": "інтеграція",
+    "target_department": "Sales",
+    "priority": "medium",
+    "short_summary": "Автоматизувати створення саммарі та списку домовленостей з транскриптів дзвінків і синхронізувати з PlanFix.",
+    "requested_actions": [
+      "Налаштувати автоматичне формування саммарі з транскриптів",
+      "Створити список домовленостей з кожного дзвінку",
+      "Інтегрувати результати в PlanFix"
+    ],
+    "needs_clarification": false,
+    "language": "uk",
+    "confidence": "high",
+    "secondary_category": "автоматизація",
+    "is_actionable": true,
+    "error": null
+  },
+  {
+    "id": "REQ-004",
+    "channel": "Slack",
+    "category": "питання/консультація",
+    "target_department": "Content",
+    "priority": "low",
+    "short_summary": "Запитання про можливість використання AI для оцінки якості статей у блозі перед публікацією.",
+    "requested_actions": [
+      "Поділитися думкою про можливість AI-оцінки якості контенту"
+    ],
+    "needs_clarification": false,
+    "language": "uk",
+    "confidence": "high",
+    "secondary_category": null,
+    "is_actionable": false,
+    "error": null
+  },
+  {
+    "id": "REQ-005",
+    "channel": "Telegram",
+    "category": "звіт/аналітика",
+    "target_department": "Finance",
+    "priority": "high",
+    "short_summary": "Терміново вивантажити список контрагентів з витратами понад 50к за травень для бухгалтерії.",
+    "requested_actions": [
+      "Вивантажити список контрагентів з витратами >50k за травень"
+    ],
+    "needs_clarification": false,
+    "language": "uk",
+    "confidence": "high",
+    "secondary_category": null,
+    "is_actionable": true,
+    "error": null
+  },
+  {
+    "id": "REQ-006",
+    "channel": "Email",
+    "category": "автоматизація",
+    "target_department": "Analytics",
+    "priority": "medium",
+    "short_summary": "Автоматизувати щотижневе створення текстового резюме змін з BigQuery експорту в Google Doc.",
+    "requested_actions": [
+      "Розробити сервіс для аналізу тижневих змін з BigQuery",
+      "Генерувати plain-language резюме ключових змін",
+      "Публікувати результат у Google Doc"
+    ],
+    "needs_clarification": false,
+    "language": "mixed",
+    "confidence": "high",
+    "secondary_category": null,
+    "is_actionable": true,
+    "error": null
+  },
+  {
+    "id": "REQ-007",
+    "channel": "Slack",
+    "category": "баг/підтримка",
+    "target_department": "Finance",
+    "priority": "high",
+    "short_summary": "Автоматизація парсингу інвойсів з Meta не працює з понеділка, рахунки накопичуються.",
+    "requested_actions": [
+      "Полагодити парсинг інвойсів з Meta"
+    ],
+    "needs_clarification": false,
+    "language": "uk",
+    "confidence": "high",
+    "secondary_category": null,
+    "is_actionable": true,
+    "error": null
+  },
+  {
+    "id": "REQ-008",
+    "channel": "Telegram",
+    "category": "поза скоупом",
+    "target_department": null,
+    "priority": "low",
+    "short_summary": "Подяка за виконану роботу.",
+    "requested_actions": [],
+    "needs_clarification": false,
+    "language": "uk",
+    "confidence": "high",
+    "secondary_category": null,
+    "is_actionable": false,
+    "error": null
+  },
+  {
+    "id": "REQ-009",
+    "channel": "Email",
+    "category": "автоматизація",
+    "target_department": "HR",
+    "priority": "medium",
+    "short_summary": "Автоматизувати первинний скринінг технічних резюме з парсингом PDF та структуруванням даних.",
+    "requested_actions": [
+      "Розробити систему парсингу PDF резюме",
+      "Структурувати поля (досвід, стек, відповідність)",
+      "Генерувати коротку оцінку кандидата"
+    ],
+    "needs_clarification": false,
+    "language": "uk",
+    "confidence": "high",
+    "secondary_category": null,
+    "is_actionable": true,
+    "error": null
+  },
+  {
+    "id": "REQ-010",
+    "channel": "Slack",
+    "category": "автоматизація",
+    "target_department": "Marketing",
+    "priority": "medium",
+    "short_summary": "Автоматизувати збір згадок Netpeak у телеграм-каналах з щоденним дайджестом і алертом на негативні згадки.",
+    "requested_actions": [
+      "Налаштувати автоматичний збір згадок Netpeak з телеграм-каналів",
+      "Створити щоденний дайджест згадок",
+      "Налаштувати алерт на негативні згадки"
+    ],
+    "needs_clarification": false,
+    "language": "uk",
+    "confidence": "high",
+    "secondary_category": null,
+    "is_actionable": true,
+    "error": null
+  },
+  {
+    "id": "REQ-011",
+    "channel": "Telegram",
+    "category": "питання/консультація",
+    "target_department": null,
+    "priority": "medium",
+    "short_summary": "Запит на створення таблиці без деталей про вимоги та призначення.",
+    "requested_actions": [],
+    "needs_clarification": true,
+    "language": "uk",
+    "confidence": "low",
+    "secondary_category": null,
+    "is_actionable": false,
+    "error": null
+  },
+  {
+    "id": "REQ-012",
+    "channel": "Email",
+    "category": "поза скоупом",
+    "target_department": "HR",
+    "priority": "medium",
+    "short_summary": "Запит на закупівлю потужного ноутбука для SMM-відділу.",
+    "requested_actions": [],
+    "needs_clarification": false,
+    "language": "uk",
+    "confidence": "high",
+    "secondary_category": null,
+    "is_actionable": false,
+    "error": null
+  },
+  {
+    "id": "REQ-013",
+    "channel": "Slack",
+    "category": "звіт/аналітика",
+    "target_department": "Marketing",
+    "priority": "medium",
+    "short_summary": "Запит на отримання звіту по Google Ads, який вже готується для колеги.",
+    "requested_actions": [
+      "Додати користувача до розсилки звіту по Google Ads"
+    ],
+    "needs_clarification": false,
+    "language": "uk",
+    "confidence": "high",
+    "secondary_category": null,
+    "is_actionable": true,
+    "error": null
+  },
+  {
+    "id": "REQ-014",
+    "channel": "Telegram",
+    "category": "питання/консультація",
+    "target_department": null,
+    "priority": "low",
+    "short_summary": "Пропозиція розглянути схожий інструмент для внутрішнього використання.",
+    "requested_actions": [],
+    "needs_clarification": false,
+    "language": "uk",
+    "confidence": "high",
+    "secondary_category": null,
+    "is_actionable": false,
+    "error": null
+  },
+  {
+    "id": "REQ-015",
+    "channel": "Email",
+    "category": "автоматизація",
+    "target_department": "Content",
+    "priority": "medium",
+    "short_summary": "Створити інструмент для автоматичного генерування 5 соцмережних постів з довгого інтерв'ю.",
+    "requested_actions": [
+      "Розробити інструмент для конвертації інтерв'ю в соцмережні пости",
+      "Налаштувати tone of voice команди контенту"
+    ],
+    "needs_clarification": false,
+    "language": "uk",
+    "confidence": "high",
+    "secondary_category": null,
+    "is_actionable": true,
+    "error": null
+  },
+  {
+    "id": "REQ-016",
+    "channel": "Slack",
+    "category": "питання/консультація",
+    "target_department": null,
+    "priority": "low",
+    "short_summary": "Запитання про те, чи є нормальним, що асистент з бази знань іноді дає відповіді не по темі.",
+    "requested_actions": [],
+    "needs_clarification": false,
+    "language": "uk",
+    "confidence": "high",
+    "secondary_category": null,
+    "is_actionable": false,
+    "error": null
+  },
+  {
+    "id": "REQ-017",
+    "channel": "Telegram",
+    "category": "інтеграція",
+    "target_department": "Support",
+    "priority": "high",
+    "short_summary": "Інтеграція Slack з Planfix для автоматичного створення тікетів з повідомлень каналу #support.",
+    "requested_actions": [
+      "Налаштувати інтеграцію Slack–Planfix для автоматичного створення тікетів з каналу #support"
+    ],
+    "needs_clarification": false,
+    "language": "uk",
+    "confidence": "high",
+    "secondary_category": null,
+    "is_actionable": true,
+    "error": null
+  },
+  {
+    "id": "REQ-018",
+    "channel": "Email",
+    "category": "звіт/аналітика",
+    "target_department": "Analytics",
+    "priority": "medium",
+    "short_summary": "Створити дашборд з щоденним підтягуванням даних з BigQuery для виявлення аномалій у витратах підрядників з поясненнями.",
+    "requested_actions": [
+      "Створити дашборд з щоденним оновленням з BigQuery",
+      "Реалізувати виявлення аномалій у витратах підрядників",
+      "Додати пояснення аномалій природною мовою"
+    ],
+    "needs_clarification": false,
+    "language": "uk",
+    "confidence": "high",
+    "secondary_category": "автоматизація",
+    "is_actionable": true,
+    "error": null
+  }
+]

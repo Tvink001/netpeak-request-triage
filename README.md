@@ -153,15 +153,19 @@ counted wrong). After a run, score the produced `output.json` offline — no ext
 python -m triage.evaluation
 ```
 
-Measured on the committed example run:
+Measured on the committed example run (`examples/`):
 
-<!-- RESULTS: filled from the first live run before pushing -->
 ```
 Scored 12 labeled rows.
-  category          __/12 = __%
-  priority          __/4  = __%
-  is_actionable     __/8  = __%
+  category         12/12 = 100%
+  priority          5/6  =  83%
+  is_actionable    11/11 = 100%
 ```
+
+The single priority miss (a procurement request scored *medium* against the labeled *low*)
+is a defensible disagreement — the accept-sets are deliberately not widened to manufacture a
+perfect score. On the full 18-row inbox the model produced 0 fallbacks and routed 13 of 18
+requests to a department.
 
 ## Where it breaks (limitations)
 
@@ -177,9 +181,9 @@ Scored 12 labeled rows.
   guarantee; the ambiguous one-liners can flip between runs. `confidence` and
   `needs_clarification` flag exactly those rows for a human, and the golden set tracks drift.
 - **Token cost** — Claude Haiku 4.5 at list price ($1 / MTok in, $5 / MTok out) costs a
-  fraction of a cent per request; the full run is printed with its exact token count and an
-  estimated dollar cost. The system prompt is re-sent per row — caching it (or batching)
-  would cut input tokens materially at scale.
+  fraction of a cent per request (the 18-row sample run used 42k tokens, ≈$0.05); the run
+  prints its exact token count and estimated dollar cost. The system prompt is re-sent per
+  row — caching it (or batching) would cut input tokens materially at scale.
 
 ## What I would do next
 
