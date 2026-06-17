@@ -62,8 +62,17 @@ def send_digest(settings: Settings, result: RunResult) -> bool:
             timeout=_SEND_TIMEOUT_SECONDS,
         )
         response.raise_for_status()
-    except Exception as exc:  # the digest is a nicety; never abort the run
-        logger.warning("Telegram digest failed: %s", exc)
+    except httpx.HTTPStatusError as exc:
+        # Log Telegram's response body (e.g. "chat not found") but NOT the
+        # exception text, whose request URL embeds the bot token.
+        logger.warning(
+            "Telegram digest failed: HTTP %s %s",
+            exc.response.status_code,
+            exc.response.text[:200],
+        )
+        return False
+    except Exception as exc:  # never abort the run; never log the URL (it has the token)
+        logger.warning("Telegram digest failed: %s", type(exc).__name__)
         return False
     logger.info("Telegram digest sent to chat %s.", settings.telegram_chat_id)
     return True

@@ -63,6 +63,9 @@ def main(argv: list[str] | None = None) -> int:
         logging.basicConfig(
             level=settings.log_level.upper(), format="%(levelname)s %(name)s: %(message)s"
         )
+        # httpx logs the full request URL at INFO; the Telegram URL embeds the
+        # bot token, so keep httpx quiet to avoid leaking it into logs.
+        logging.getLogger("httpx").setLevel(logging.WARNING)
         result = run(settings, args.csv, limit=args.limit)
         json_path, report_path = write_outputs(result, args.output_dir)
         stats = result.stats

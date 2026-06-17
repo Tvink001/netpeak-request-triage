@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import Any
 from unittest.mock import MagicMock
 
+import httpx
 import pytest
 
 from triage.config import Settings
@@ -66,3 +67,20 @@ def test_send_digest_posts_when_configured(monkeypatch: pytest.MonkeyPatch) -> N
     assert "/bot123:abc/sendMessage" in captured["url"]
     assert captured["json"]["chat_id"] == 42
     assert captured["json"]["parse_mode"] == "HTML"
+
+
+def test_send_digest_swallows_http_error(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setenv("TELEGRAM_BOT_TOKEN", "123:abc")
+    monkeypatch.setenv("TELEGRAM_CHAT_ID", "42")
+
+    def fake_post(url: str, json: dict[str, Any], timeout: float) -> httpx.Response:
+        return httpx.Response(
+            400,
+            json={"ok": False, "description": "Bad Request: chat not found"},
+            request=httpx.Request("POST", url),
+        )
+
+    monkeypatch.setattr("triage.telegram.httpx.post", fake_post)
+
+    # A 400 is swallowed (returns False), never raised.
+    assert send_digest(Settings(), _result()) is False
