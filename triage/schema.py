@@ -17,19 +17,20 @@ _PRIORITIES = [p.value for p in Priority]
 _LANGUAGES = [lang.value for lang in Language]
 _CONFIDENCES = [c.value for c in Confidence]
 
-# Properties the model fills. Nullable fields use a ["type", "null"] union and
-# stay in ``required`` so the model must actively decide null vs a value rather
-# than omitting the key.
+# Properties the model fills. Nullable fields use anyOf(..., null): structured
+# outputs require a single `type` alongside `enum`, so a nullable enum cannot use
+# a ["string", "null"] type array. Every field stays in `required`, so the model
+# must actively decide null vs a value rather than omit the key.
 EXTRACTION_PROPERTIES: dict[str, Any] = {
     "category": {"type": "string", "enum": _CATEGORIES},
-    "target_department": {"type": ["string", "null"]},
+    "target_department": {"anyOf": [{"type": "string"}, {"type": "null"}]},
     "priority": {"type": "string", "enum": _PRIORITIES},
     "short_summary": {"type": "string"},
     "requested_actions": {"type": "array", "items": {"type": "string"}},
     "needs_clarification": {"type": "boolean"},
     "language": {"type": "string", "enum": _LANGUAGES},
     "confidence": {"type": "string", "enum": _CONFIDENCES},
-    "secondary_category": {"type": ["string", "null"], "enum": [*_CATEGORIES, None]},
+    "secondary_category": {"anyOf": [{"type": "string", "enum": _CATEGORIES}, {"type": "null"}]},
     "is_actionable": {"type": "boolean"},
 }
 

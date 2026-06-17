@@ -29,8 +29,10 @@ is **reserved for fallback records** and is never offered to the model.
 
 `triage/schema.py` builds the schema passed to Anthropic's `output_config`. Only the
 model-produced fields appear (`id`, `channel`, `error` are added by our code). Nullable
-fields use a `["type", "null"]` union and stay in `required`, so the model must actively
-decide null vs. a value rather than omitting the key:
+fields use `anyOf` with a `null` branch — structured outputs require a single `type`
+alongside `enum`, so a nullable enum cannot use a `["string", "null"]` type array. Every
+field stays in `required`, so the model must actively decide null vs. a value rather than
+omitting the key:
 
 ```json
 {
@@ -41,14 +43,15 @@ decide null vs. a value rather than omitting the key:
                "confidence", "secondary_category", "is_actionable"],
   "properties": {
     "category":            {"type": "string", "enum": ["автоматизація", "..."]},
-    "target_department":   {"type": ["string", "null"]},
+    "target_department":   {"anyOf": [{"type": "string"}, {"type": "null"}]},
     "priority":            {"type": "string", "enum": ["low", "medium", "high"]},
     "short_summary":       {"type": "string"},
     "requested_actions":   {"type": "array", "items": {"type": "string"}},
     "needs_clarification": {"type": "boolean"},
     "language":            {"type": "string", "enum": ["uk", "en", "mixed"]},
     "confidence":          {"type": "string", "enum": ["low", "medium", "high"]},
-    "secondary_category":  {"type": ["string", "null"], "enum": ["автоматизація", "...", null]},
+    "secondary_category":  {"anyOf": [{"type": "string", "enum": ["автоматизація", "..."]},
+                                      {"type": "null"}]},
     "is_actionable":       {"type": "boolean"}
   }
 }

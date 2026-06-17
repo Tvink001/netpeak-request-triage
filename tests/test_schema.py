@@ -33,4 +33,5 @@ def test_schema_enums_match_python_enums() -> None:
 
 def test_sentinel_category_is_never_offered_to_the_model() -> None:
     assert Category.UNPROCESSED.value not in EXTRACTION_PROPERTIES["category"]["enum"]
-    assert Category.UNPROCESSED.value not in EXTRACTION_PROPERTIES["secondary_category"]["enum"]
+    secondary_enum = EXTRACTION_PROPERTIES["secondary_category"]["anyOf"][0]["enum"]
+    assert Category.UNPROCESSED.value not in secondary_enum
